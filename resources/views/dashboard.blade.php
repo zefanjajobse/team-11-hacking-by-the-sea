@@ -12,11 +12,15 @@
 
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
-                            <button style="position: relative; float: right;" class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                            <button style="position: relative; float: right;"
+                                    class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
                                 Add
                                 <div class="ml-1">
-                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                         viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                              clip-rule="evenodd"/>
                                     </svg>
                                 </div>
                             </button>
@@ -33,37 +37,58 @@
 
                     <form method="POST" action="{{ route('dashboard') }}">
                         @csrf
-                        <!-- nanme -->
+                        <!-- name -->
                         <div>
-                            <x-label for="title" :value="__('Title')" />
-
-                            <x-input id="title" class="input is-normal" type="text" name="title" :value="old('title')" required autofocus />
-                        </div>
-
-                        <div>
-                            <x-label for="author" :value="__('Author')" />
-
-                            <x-input id="author" class="input is-normal" type="text" name="author" :value="old('author')" required autofocus />
-                        </div>
-
-                        <div id="body-list">
-                            <div id="main-copy" class="field">
-                                <div>
-                                    <x-label for="body-1" :value="__('Body')" />
-                                    <textarea class="is-normal textarea "  id="body-1"  type="textarea" name="1" :value="old('1')" required autofocus></textarea>
+                            <div class="field">
+                                <label class="label">Title</label>
+                                <div class="control">
+                                    <x-input id="title" class="input is-normal" type="text" name="title"
+                                             :value="old('title')" required autofocus/>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="flex items-center justify-end mt-4">
-                            <a class="button" href="{{ route('dashboard') }}">
-                                {{ __('Back') }}
-                            </a>
+                        <div>
+                            <div class="field">
+                                <label class="label">Name</label>
+                                <div class="control">
+                                    <input type="number" id="number" name="number"
+                                           class="number">
+                                </div>
 
-                            <x-button class="ml-4 button is-success">
-                                {{ __('submit') }}
-                            </x-button>
+                            </div>
                         </div>
+                            <div>
+                                <div>
+                                    <div class="field">
+                                        <label class="label">Author</label>
+                                        <div class="control">
+
+                                <x-input id="author" class="input is-normal" type="text" name="author"
+                                         :value="old('author')" required autofocus/>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div id="body-list">
+                                <div id="main-copy" class="field">
+                                    <div>
+                                        <x-label for="body-1" :value="__('Body')"/>
+                                        <textarea class="is-normal textarea " id="body-1" type="textarea" name="1"
+                                                  :value="old('1')" required autofocus></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center justify-end mt-4">
+                                <a class="button" href="{{ route('dashboard') }}">
+                                    {{ __('Back') }}
+                                </a>
+
+                                <x-button class="ml-4 button is-success">
+                                    {{ __('submit') }}
+                                </x-button>
+                            </div>
                     </form>
                 </div>
             </div>
@@ -74,7 +99,7 @@
 
 <script>
     i = 2
-    document.getElementById("add-body").addEventListener("click", function(event){
+    document.getElementById("add-body").addEventListener("click", function (event) {
         event.preventDefault()
 
         const node = document.getElementById("main-copy");
