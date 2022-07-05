@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\File;
 use Illuminate\Http\Request;
+use Smalot\PdfParser\Parser;
 
 class FileUploadController extends Controller
 {
+    private $fileName;
+
     public function index()
     {
         return view('file-upload.index');
@@ -21,14 +24,20 @@ class FileUploadController extends Controller
         ]);
 
         $name = $request->file('file')->getFilename();
-
-        $path = $request->file('file')->store('public/files');
+        $fileName = $name;
+        $path = $request->file('file')->store('files', ['disk' => 'public']);
 
 
         $save = new File;
 
         $save->name = $name;
         $save->path = $path;
+        $parser = new Parser();
+
+        $pdf = $parser->parseFile(storage_path('app/public/') . $path);
+        $text = $pdf->getText();
+
+       dd($text);
 
         return redirect('file-upload')->with('status', 'File Has been uploaded successfully');
 
