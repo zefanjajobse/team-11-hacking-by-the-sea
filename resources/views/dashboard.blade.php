@@ -50,7 +50,7 @@
                             <div id="main-copy" class="field">
                                 <div>
                                     <x-label for="body-1" :value="__('Body')" />
-                                    <x-input class="input is-normal"  id="body-1"  type="text" name="1" :value="old('1')" required autofocus />
+                                    <textarea class="is-normal"  id="body-1"  type="textarea" name="1" :value="old('1')" required autofocus></textarea>
                                 </div>
                             </div>
                         </div>
