@@ -50,30 +50,40 @@
 
                         <div>
                             <div class="field">
-                                <label class="label">Name</label>
+                                <label class="label">Studentnumber</label>
                                 <div class="control">
-                                    <input type="number" id="number" name="number"
+                                    <input type="number" id="studentnumber" name="number"
                                            class="number">
                                 </div>
 
                             </div>
-                        </div>
                             <div>
-                                <div>
-                                    <div class="field">
-                                        <label class="label">Author</label>
-                                        <div class="control">
-
-                                <x-input id="author" class="input is-normal" type="text" name="author"
-                                         :value="old('author')" required autofocus/>
-                                        </div>
+                                <div class="field">
+                                    <label class="label">Student Year</label>
+                                    <div class="control">
+                                        <input type="number" id="studentnummer" name=studentnummer"
+                                               min="1" max="4" class="number">
                                     </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <div class="field">
+                                    <label class="label">Author</label>
+                                    <div class="control">
+
+                                        <x-input id="author" class="input is-normal" type="text" name="author"
+                                                 :value="old('author')" required autofocus/>
+                                    </div>
+                                </div>
                             </div>
 
                             <div id="body-list">
                                 <div id="main-copy" class="field">
-                                    <div>
-                                        <x-label for="body-1" :value="__('Body')"/>
+                                    <label class="label">Body</label>
+                                    <div class="control">
                                         <textarea class="is-normal textarea " id="body-1" type="textarea" name="1"
                                                   :value="old('1')" required autofocus></textarea>
                                     </div>
