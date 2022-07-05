@@ -37,7 +37,6 @@ class FileUploadController extends Controller
         $pdf = $parser->parseFile(storage_path('app/public/') . $path);
         $text = $pdf->getText();
 
-       dd($text);
 
         return redirect('file-upload')->with('status', 'File Has been uploaded successfully');
 

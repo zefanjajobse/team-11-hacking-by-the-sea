@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "27aa105374f3e95a4008517702694065",
+    "content-hash": "2eb7f74b5133a6a8b322265489de7955",
     "packages": [
         {
             "name": "brick/math",
@@ -2008,84 +2008,6 @@
             "time": "2022-05-31T20:59:12+00:00"
         },
         {
-            "name": "pelago/emogrifier",
-            "version": "v6.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/MyIntervals/emogrifier.git",
-                "reference": "aa72d5407efac118f3896bcb995a2cba793df0ae"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/MyIntervals/emogrifier/zipball/aa72d5407efac118f3896bcb995a2cba793df0ae",
-                "reference": "aa72d5407efac118f3896bcb995a2cba793df0ae",
-                "shasum": ""
-            },
-            "require": {
-                "ext-dom": "*",
-                "ext-libxml": "*",
-                "php": "~7.2.0 || ~7.3.0 || ~7.4.0 || ~8.0.0 || ~8.1.0",
-                "sabberworm/php-css-parser": "^8.3.1",
-                "symfony/css-selector": "^3.4.32 || ^4.4 || ^5.3 || ^6.0"
-            },
-            "require-dev": {
-                "php-parallel-lint/php-parallel-lint": "^1.3.0",
-                "phpunit/phpunit": "^8.5.16",
-                "rawr/cross-data-providers": "^2.3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-main": "7.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Pelago\\Emogrifier\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Oliver Klee",
-                    "email": "github@oliverklee.de"
-                },
-                {
-                    "name": "Zoli Szabó",
-                    "email": "zoli.szabo+github@gmail.com"
-                },
-                {
-                    "name": "John Reeve",
-                    "email": "jreeve@pelagodesign.com"
-                },
-                {
-                    "name": "Jake Hotson",
-                    "email": "jake@qzdesign.co.uk"
-                },
-                {
-                    "name": "Cameron Brooks"
-                },
-                {
-                    "name": "Jaime Prado"
-                }
-            ],
-            "description": "Converts CSS styles into inline style attributes in your HTML code",
-            "homepage": "https://www.myintervals.com/emogrifier.php",
-            "keywords": [
-                "css",
-                "email",
-                "pre-processing"
-            ],
-            "support": {
-                "issues": "https://github.com/MyIntervals/emogrifier/issues",
-                "source": "https://github.com/MyIntervals/emogrifier"
-            },
-            "time": "2021-09-16T16:22:04+00:00"
-        },
-        {
             "name": "phpoption/phpoption",
             "version": "1.8.1",
             "source": {
@@ -2812,59 +2734,6 @@
                 }
             ],
             "time": "2022-03-27T21:42:02+00:00"
-        },
-        {
-            "name": "sabberworm/php-css-parser",
-            "version": "8.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sabberworm/PHP-CSS-Parser.git",
-                "reference": "e41d2140031d533348b2192a83f02d8dd8a71d30"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sabberworm/PHP-CSS-Parser/zipball/e41d2140031d533348b2192a83f02d8dd8a71d30",
-                "reference": "e41d2140031d533348b2192a83f02d8dd8a71d30",
-                "shasum": ""
-            },
-            "require": {
-                "ext-iconv": "*",
-                "php": ">=5.6.20"
-            },
-            "require-dev": {
-                "codacy/coverage": "^1.4",
-                "phpunit/phpunit": "^4.8.36"
-            },
-            "suggest": {
-                "ext-mbstring": "for parsing UTF-8 CSS"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Sabberworm\\CSS\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Raphael Schweikert"
-                }
-            ],
-            "description": "Parser for CSS Files written in PHP",
-            "homepage": "https://www.sabberworm.com/blog/2010/6/10/php-css-parser",
-            "keywords": [
-                "css",
-                "parser",
-                "stylesheet"
-            ],
-            "support": {
-                "issues": "https://github.com/sabberworm/PHP-CSS-Parser/issues",
-                "source": "https://github.com/sabberworm/PHP-CSS-Parser/tree/8.4.0"
-            },
-            "time": "2021-12-11T13:40:54+00:00"
         },
         {
             "name": "smalot/pdfparser",
@@ -5070,52 +4939,6 @@
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/2.2.4"
             },
             "time": "2021-12-08T09:12:39+00:00"
-        },
-        {
-            "name": "tonchik-tm/pdf-to-html",
-            "version": "1.0.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/tonchik-tm/pdf-to-html.git",
-                "reference": "6bce319b6f914ba316f94f0a45dff90db3ddf738"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/tonchik-tm/pdf-to-html/zipball/6bce319b6f914ba316f94f0a45dff90db3ddf738",
-                "reference": "6bce319b6f914ba316f94f0a45dff90db3ddf738",
-                "shasum": ""
-            },
-            "require": {
-                "pelago/emogrifier": "@dev",
-                "php": ">=5.4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "TonchikTm": "src"
-                },
-                "psr-4": {
-                    "TonchikTm\\PdfToHtml\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GNU GENERAL PUBLIC LICENSE"
-            ],
-            "authors": [
-                {
-                    "name": "Anton Nikolaev",
-                    "email": "tonchik@tonchik.net",
-                    "homepage": "http://www.tonchik.net",
-                    "role": "Developer"
-                }
-            ],
-            "description": "This PHP class can convert your pdf files to html using poppler-utils.",
-            "support": {
-                "issues": "https://github.com/tonchik-tm/pdf-to-html/issues",
-                "source": "https://github.com/tonchik-tm/pdf-to-html/tree/master"
-            },
-            "time": "2018-06-27T11:20:07+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
