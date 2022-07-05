@@ -50,7 +50,7 @@
                             <div id="main-copy" class="field">
                                 <div>
                                     <x-label for="body-1" :value="__('Body')" />
-                                    <textarea class="is-normal"  id="body-1"  type="textarea" name="1" :value="old('1')" required autofocus></textarea>
+                                    <textarea class="is-normal textarea "  id="body-1"  type="textarea" name="1" :value="old('1')" required autofocus></textarea>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                                 {{ __('Back') }}
                             </a>
 
-                            <x-button class="ml-4">
+                            <x-button class="ml-4 button is-black">
                                 {{ __('Register') }}
                             </x-button>
                         </div>
