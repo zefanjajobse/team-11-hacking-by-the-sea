@@ -12,7 +12,7 @@
 
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
-                            <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                            <button style="position: relative; float: right;" class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
                                 Add
                                 <div class="ml-1">
                                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -24,11 +24,7 @@
 
                         <x-slot name="content">
                             <x-dropdown-link
-                                    onclick="event.preventDefault(); console.log('yeet');">
-                                {{ __('LBody') }}
-                            </x-dropdown-link>
-                            <x-dropdown-link
-                                    onclick="event.preventDefault(); console.log('yeet');">
+                                id="add-body">
                                 {{ __('Body') }}
                             </x-dropdown-link>
                         </x-slot>
@@ -39,26 +35,22 @@
                         @csrf
                         <!-- nanme -->
                         <div>
-                            <x-label for="name" :value="__('Name')" />
+                            <x-label for="title" :value="__('Title')" />
 
-                            <x-input id="name" class="input is-normal" type="text" name="name" :value="old('name')" required autofocus />
+                            <x-input id="title" class="input is-normal" type="text" name="title" :value="old('title')" required autofocus />
                         </div>
 
-                        <button id="add-goal">Add new goal</button>
+                        <div>
+                            <x-label for="author" :value="__('Author')" />
 
-                        <div id="extra">
-                            <div id="to-copy" class="field">
+                            <x-input id="author" class="input is-normal" type="text" name="author" :value="old('author')" required autofocus />
+                        </div>
+
+                        <div id="body-list">
+                            <div id="main-copy" class="field">
                                 <div>
-                                    <x-label for="goal-1" :value="__('Goal title')" />
-                                    <x-input class="input is-normal"  id="goal-1"  type="text" name="1" :value="old('1')" required autofocus />
-                                </div>
-                                <div>
-                                    <x-label for="goal-desc-1" :value="__('Goal description')" />
-                                    <x-input class="input is-normal"  id="goal-desc-1"  type="text" name="1" :value="old('1')" required autofocus />
-                                </div>
-                                <div>
-                                    <x-label for="goal-comp-1" :value="__('Completion')" />
-                                    <x-input id="goal-comp-1" class="input is-normal" type="text" name="1" :value="old('1')" required autofocus />
+                                    <x-label for="body-1" :value="__('Body')" />
+                                    <x-input class="input is-normal"  id="body-1"  type="text" name="1" :value="old('1')" required autofocus />
                                 </div>
                             </div>
                         </div>
@@ -82,19 +74,19 @@
 
 <script>
     i = 2
-    document.getElementById("add-goal").addEventListener("click", function(event){
+    document.getElementById("add-body").addEventListener("click", function(event){
         event.preventDefault()
 
-        const node = document.getElementById("to-copy");
+        const node = document.getElementById("main-copy");
         const clone = node.cloneNode(true);
 
-        clone.children[0].children[0].htmlFor = "goal-" + i
-        clone.children[0].children[1].id = "goal-" + i
-        clone.children[1].children[0].htmlFor = "goal-desc-" + i
-        clone.children[1].children[1].id = "goal-desc-" + i
-        clone.children[2].children[0].htmlFor = "goal-comp-" + i
-        clone.children[2].children[1].id = "goal-comp-" + i
+        clone.children[0].children[0].htmlFor = "body-" + i
+        clone.children[0].children[1].id = "body-" + i
+        // clone.children[1].children[0].htmlFor = "goal-desc-" + i
+        // clone.children[1].children[1].id = "goal-desc-" + i
+        // clone.children[2].children[0].htmlFor = "goal-comp-" + i
+        // clone.children[2].children[1].id = "goal-comp-" + i
         i++
-        document.getElementById("extra").appendChild(clone);
+        document.getElementById("body-list").appendChild(clone);
     });
 </script>
