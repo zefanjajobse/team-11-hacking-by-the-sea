@@ -71,70 +71,72 @@
                                             name="date"
                                             value={{ date('Y-m-d ') }}>
                                     </div>
+                                    <div class="field">
+                                        <label class="label">Student Year</label>
+                                        <div class="control">
+                                            <input type="number" id="studentyear" name=studentyear"
+                                                   min="1" max="4" class="number">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <div class="field">
+                                        <label class="label">Author</label>
+                                        <div class="control">
+
+                                            <x-input id="author" class="input is-normal" type="text" name="author"
+                                                     :value="old('author')" required autofocus/>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="field">
-                                    <label class="label">Student Year</label>
+                                    <label class="label">Theme</label>
                                     <div class="control">
-                                        <input type="number" id="studentyear" name=studentyear"
-                                               min="1" max="4" class="number">
+                                        <select type="select" id="theme" name="theme"
+                                                class="select">
+                                            <option value="personal development">Personal Development</option>
+                                            <option value="community development">Community development</option>
+                                            <option value="sustainable development">Sustainable development</option>
+                                        </select>
                                     </div>
 
+                                </div>
+                                <div class="field">
+                                    <label class="label">EC</label>
+                                    <div class="control">
+                                        <select type="select" id="ec" name="ec"
+                                                class="select">
+                                            <option value=1.25>1.25</option>
+                                            <option value=2.5>2.5</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                                <div id="body-list">
+                                    <div id="main-copy" class="field">
+                                        <label class="label">Body</label>
+                                        <div class="control">
+                                        <textarea class="is-normal textarea " id="body-1" type="textarea" name="1"
+                                                  :value="old('1')" required autofocus></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center justify-end mt-4">
+                                    <a class="button" href="{{ route('dashboard') }}">
+                                        {{ __('Back') }}
+                                    </a>
+
+                                    <x-button class="ml-4 button is-success">
+                                        {{ __('submit') }}
+                                    </x-button>
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <div>
-                                <div class="field">
-                                    <label class="label">Author</label>
-                                    <div class="control">
-
-                                        <x-input id="author" class="input is-normal" type="text" name="author"
-                                                 :value="old('author')" required autofocus/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <label class="label">Theme</label>
-                                <div class="control">
-                                    <select type="select" id="theme" name="theme"
-                                           class="select">
-                                        <option value="personal development">Personal Development</option>
-                                        <option value="community development">Community development</option>
-                                        <option value="sustainable development">Sustainable development</option>
-                                    </select>
-                                </div>
-
-                            </div>
-                            <div class="field">
-                                <label class="label">EC</label>
-                                <div class="control">
-                                    <select type="select" id="ec" name="ec"
-                                            class="select">
-                                        <option value=1.25>1.25</option>
-                                        <option value=2.5>2.5</option>
-                                    </select>
-                                </div>
-
-                            </div>
-
-                            <div id="body-list">
-                                <div id="main-copy" class="field">
-                                    <label class="label">Body</label>
-                                    <div class="control">
-                                        <textarea class="is-normal textarea " id="body-1" type="textarea" name="1"
-                                                  :value="old('1')" required autofocus></textarea>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center justify-end mt-4">
-                                <a class="button" href="{{ route('dashboard') }}">
-                                    {{ __('Back') }}
-                                </a>
-
-                                <x-button class="ml-4 button is-success">
-                                    {{ __('submit') }}
-                                </x-button>
-                            </div>
                     </form>
                 </div>
             </div>
