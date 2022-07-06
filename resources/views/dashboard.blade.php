@@ -40,9 +40,9 @@
                         <!-- name -->
                         <div>
                             <div class="field">
-                                <label class="label">Title</label>
+                                <label class="label">student name</label>
                                 <div class="control">
-                                    <x-input id="title" class="input is-normal" type="text" name="title"
+                                    <x-input id="studentname" class="input is-normal" type="text" name="studentname"
                                              :value="old('title')" required autofocus/>
                                 </div>
                             </div>
@@ -64,12 +64,12 @@
                                         <input
                                             @class ([
                                                 'input',
-                                                'is-danger' => $errors->get('time'),
+                                                'is-danger' => $errors->get('date'),
                                             ])
-                                            type="time"
-                                            id="time"
-                                            name="time"
-                                            value={{ date(' H:i') }}>
+                                            type="date"
+                                            id="date"
+                                            name="date"
+                                            value={{ date('Y-m-d ') }}>
                                     </div>
                                 <div class="field">
                                     <label class="label">Student Year</label>
