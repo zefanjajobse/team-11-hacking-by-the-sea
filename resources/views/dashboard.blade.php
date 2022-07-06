@@ -35,7 +35,7 @@
                     </x-dropdown>
 
 
-                    <form method="POST" action="{{ route('dashboard') }}">
+                    <form method="POST" action="{{ route('pdf.store') }}">
                         @csrf
                         <!-- name -->
                         <div>
