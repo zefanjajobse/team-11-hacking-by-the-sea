@@ -120,7 +120,7 @@
                                     <div id="main-copy" class="field">
                                         <label class="label">Body</label>
                                         <div class="control">
-                                        <textarea class="is-normal textarea " id="body-1" type="textarea" name="1"
+                                        <textarea class="is-normal textarea" id="body-1" type="textarea" name="1"
                                                   :value="old('1')" required autofocus></textarea>
                                         </div>
                                     </div>
@@ -153,12 +153,7 @@
         const node = document.getElementById("main-copy");
         const clone = node.cloneNode(true);
 
-        clone.children[0].children[0].htmlFor = "body-" + i
-        clone.children[0].children[1].id = "body-" + i
-        // clone.children[1].children[0].htmlFor = "goal-desc-" + i
-        // clone.children[1].children[1].id = "goal-desc-" + i
-        // clone.children[2].children[0].htmlFor = "goal-comp-" + i
-        // clone.children[2].children[1].id = "goal-comp-" + i
+        clone.children[1].children[0].id = "body-" + i
         i++
         document.getElementById("body-list").appendChild(clone);
     });
