@@ -36,6 +36,10 @@
 
 
                     <form method="POST" action="{{ route('pdf.store') }}">
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+
                         @csrf
                         <!-- name -->
                         <div>
@@ -57,7 +61,7 @@
                             <div class="field">
                                 <label class="label">Studentnumber</label>
                                 <div class="control">
-                                    <input type="number" id="studentnumber" name="number"
+                                    <input type="number" id="studentnumber" name="studentnumber"
                                            class="number @error('studentnumber') is-invalid @enderror"
                                            min="1" max="999999999"
                                            value="{{ old('studentnumber') }}">
@@ -74,11 +78,11 @@
                                         <input
                                             @class ([
                                                 'input',
-                                                'is-danger' => $errors->get('date'),
+                                                'is-danger' => $errors->get('time'),
                                             ])
                                             type="date"
-                                            id="date"
-                                            name="date"
+                                            id="time"
+                                            name="time"
                                             value={{ date('Y-m-d ') }}>
                                     </div>
                                     <div class="field">
@@ -148,7 +152,7 @@
                                         <label class="label">Body</label>
                                         <div class="control">
                                         <textarea class="is-normal textarea @error('body') is-invalid @enderror"
-                                                  id="body-1" type="textarea" name="1"
+                                                  id="body" type="textarea" name="body"
                                                   :value="{{ old('body') }}" required autofocus></textarea>
                                             @error('body')
                                             <div class="alert alert-danger">{{ $message }}</div>

@@ -86,13 +86,13 @@ class PdfController extends Controller
     }
     private function validatePdf(Request $request){
         return $request->validate([
-            'studentname' => 'required|string',
-            'studentnumber' => 'required',
-            'time' => 'required|date',
-            'author'=>'required|string',
-            'theme'=>'required|string',
-            'ec'=>'required|number',
-            'body'=>'string',
+            'studentname' => ['required', 'string', 'min:3'],
+            'studentnumber' => ['required', 'integer', 'between:1,4'],
+            'time' => ['required', 'date'],
+            'author'=> ['required', 'string', 'min:3'],
+            'theme'=> ['required', 'string', 'min:3'],
+            'ec'=> ['required', 'numeric'],
+            'body'=> ['string'],
             ]);
     }
 }
