@@ -13,8 +13,10 @@ class PdfController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {dd('test');
+    {
+        $pdfs = Pdf::orderBy('updated_at')->get();
 //        return view('{name page}',['{name to give something to}'=>{}${name to give something}]
+        return view('pdfList.index', ['pdfs' => $pdfs]);
     }
 
     /**

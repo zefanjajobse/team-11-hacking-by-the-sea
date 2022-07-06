@@ -36,9 +36,6 @@
 
 
                     <form method="POST" action="{{ route('pdf.store') }}">
-                        @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
 
                         @csrf
                         <!-- name -->
