@@ -58,10 +58,23 @@
 
                             </div>
                             <div>
+                                <label for="time">{{__("Time")}}:</label>
+                                <div class="label">
+                                    <div class="control has-icons-left has-icons-right">
+                                        <input
+                                            @class ([
+                                                'input',
+                                                'is-danger' => $errors->get('time'),
+                                            ])
+                                            type="time"
+                                            id="time"
+                                            name="time"
+                                            value={{ date(' H:i') }}>
+                                    </div>
                                 <div class="field">
                                     <label class="label">Student Year</label>
                                     <div class="control">
-                                        <input type="number" id="studentnummer" name=studentnummer"
+                                        <input type="number" id="studentyear" name=studentyear"
                                                min="1" max="4" class="number">
                                     </div>
 
@@ -78,6 +91,29 @@
                                                  :value="old('author')" required autofocus/>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Theme</label>
+                                <div class="control">
+                                    <select type="select" id="theme" name="theme"
+                                           class="select">
+                                        <option value="personal development">Personal Development</option>
+                                        <option value="community development">Community development</option>
+                                        <option value="sustainable development">Sustainable development</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="field">
+                                <label class="label">EC</label>
+                                <div class="control">
+                                    <select type="select" id="ec" name="ec"
+                                            class="select">
+                                        <option value=1.25>1.25</option>
+                                        <option value=2.5>2.5</option>
+                                    </select>
+                                </div>
+
                             </div>
 
                             <div id="body-list">
