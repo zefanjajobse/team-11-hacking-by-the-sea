@@ -42,9 +42,14 @@
                             <div class="field">
                                 <label class="label">student name</label>
                                 <div class="control">
-                                    <x-input id="studentname" class="input is-normal" type="text" name="studentname"
-                                             :value="old('title')" required autofocus/>
+                                    <x-input id="studentname"
+                                             class="input is-normal @error('studentname') is-invalid @enderror"
+                                             type="text" name="studentname"
+                                             value="{{ old('studentname') }}" required autofocus/>
                                 </div>
+                                @error('studentname')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
 
@@ -53,7 +58,12 @@
                                 <label class="label">Studentnumber</label>
                                 <div class="control">
                                     <input type="number" id="studentnumber" name="number"
-                                           class="number">
+                                           class="number @error('studentnumber') is-invalid @enderror"
+                                           min="1" max="999999999"
+                                           value="{{ old('studentnumber') }}">
+                                    @error('studentnumber')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                             </div>
@@ -75,7 +85,12 @@
                                         <label class="label">Student Year</label>
                                         <div class="control">
                                             <input type="number" id="studentyear" name=studentyear"
-                                                   min="1" max="4" class="number">
+                                                   min="1" max="4"
+                                                   class="number  @error('studentyear') is-invalid @enderror"
+                                                   value="{{ old('studentyear') }}">
+                                            @error('studentyear')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                            @enderror
                                         </div>
 
                                     </div>
@@ -87,8 +102,13 @@
                                         <label class="label">Author</label>
                                         <div class="control">
 
-                                            <x-input id="author" class="input is-normal" type="text" name="author"
-                                                     :value="old('author')" required autofocus/>
+                                            <x-input id="author"
+                                                     class="input is-normal  @error('author') is-invalid @enderror"
+                                                     type="text" name="author"
+                                                     value="{{ old('author') }}" required autofocus/>
+                                            @error('author')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -96,22 +116,29 @@
                                     <label class="label">Theme</label>
                                     <div class="control">
                                         <select type="select" id="theme" name="theme"
-                                                class="select">
+                                                class="select @error('theme') is-invalid @enderror"
+                                                value="{{ old('theme') }}">
                                             <option value="personal development">Personal Development</option>
                                             <option value="community development">Community development</option>
                                             <option value="sustainable development">Sustainable development</option>
                                         </select>
+                                        @error('theme')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
 
                                 </div>
                                 <div class="field">
-                                    <label class="label">EC</label>
+                                    <label class="label @error('ec') is-invalid @enderror">EC</label>
                                     <div class="control">
                                         <select type="select" id="ec" name="ec"
-                                                class="select">
+                                                class="select" value="{{ old('ec') }}">
                                             <option value=1.25>1.25</option>
                                             <option value=2.5>2.5</option>
                                         </select>
+                                        @error('ec')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
 
                                 </div>
@@ -120,8 +147,12 @@
                                     <div id="main-copy" class="field">
                                         <label class="label">Body</label>
                                         <div class="control">
-                                        <textarea class="is-normal textarea" id="body-1" type="textarea" name="1"
-                                                  :value="old('1')" required autofocus></textarea>
+                                        <textarea class="is-normal textarea @error('body') is-invalid @enderror"
+                                                  id="body-1" type="textarea" name="1"
+                                                  :value="{{ old('body') }}" required autofocus></textarea>
+                                            @error('body')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
